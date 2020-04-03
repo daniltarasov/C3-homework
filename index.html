@@ -1,29 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- 	<meta charset="UTF-8">
-<!-- 	<link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-	
-	<title>Стартовая страница</title>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <title>ГОРОДА</title>
 </head>
-<body>
+<body style="background-color:#F6F2F1;">
+<label style="font-size:20px;">Ваш город</label>
 
-    <div class="container">
-        <h1>ЛЮБИМОЕ ЖИВОТНОЕ</h1>
-        <form action="pages/sendvote.html" target="_blank">
-            <button type="submit" class="btn btn-primary">ГОЛОСУЙ, ИЛИ ПРОИГРАЕШЬ!</button>
-        </form>
-        <form action="pages/viewvote.html" target="_blank">
-            <button type="submit" class="btn btn-primary">ПРОСМОТР РЕЗУЛЬТАТОВ</button>
-        </form>
-        <div class="message"></div>        
+<br>
+<textarea style="width:200px; height: 60px;" id="area" placeholder="Введите название города"></textarea>
+<br>
+<button onclick="localStorage.removeItem('area');area.value=''">Очистить</button>
+<br>
+<label><input type="checkbox" class='check' id="one">не звонить мне</label>
+<br>
+<label><input type="checkbox" class='check' id="one2">я прочитал и согласен с правилами пользования сервисом</label>
+<br>
+<label><input type="checkbox" class='check' id="one3">я не выбираю эту галочку</label>
+<br>
+<label><input type="checkbox" class='check' id="one4">я подтверждаю, что свобода в интернете — это возможность выбирать галочки</label>
+<br>
+<label><input type="checkbox" class='check' id="one5">мне больше 12 лет</label>
+<br>
+<label><input type="checkbox" class='check' id="one6">это задание выполнено правильно</label>
 
 
+<script src="./src/script.js"></script>
 
-    </div>
-
-    <!-- <script src="./src/script.js"></script> -->
 </body>
 </html>
