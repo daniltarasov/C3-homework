@@ -6,13 +6,21 @@
 	</head>
 
 	<body onload = "start()" style="background-color:#F6F2F1;">
-		<label style="font-size:16px;">Ваш город</label>
-		<br>
-		<input type = "text" style="width:250px;" id="city" placeholder="Введите название города">
-		<br>
-		<button id="clear">Очистить</button>
-		<br>
-		<br>
+
+			
+		<div id="enter">
+			<br>
+			<input type = "text" style="width:250px;" id="city" placeholder="Введите название города">
+			<br>
+			<br>
+			<br>
+		</div>
+		<div id="view">
+			<label id = "yourCity" style="font-size:16px;"></label>
+			<br>
+			<button id="clear">Очистить</button>
+			<p style = "margin-top:0">(обновится после перезагрузки страницы)</p>
+		</div>
 	    <form>
 			<input type="checkbox" class='check' id="chck1">не звонить мне;<br>
 	        <input type="checkbox" class='check' id="chck2">я прочитал и согласен с правилами пользования сервисом;<br>
