@@ -52,6 +52,7 @@ city.oninput = () => {
 clear.onclick = function () {
   deleteCookie("cityName");
   deleteCookie("cityChanged");
+  yourCity.innerText = "Город не задан."
   // city.value = "";
   // city.disabled = false;
   console.log(document.cookie);
