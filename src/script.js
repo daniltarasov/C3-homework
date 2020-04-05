@@ -1,6 +1,10 @@
 function start(){
 
-  area.value = getCookie('area');
+  if (getCookie("cityChanged") === "true") {
+    city.value = getCookie('cityName');
+    city.disabled = true;
+  }
+
   if (getCookie("saved") === "true") {
       let checkArr = document.querySelectorAll(".check");
       checkArr.forEach(function(elem){
@@ -10,7 +14,7 @@ function start(){
         else {
           elem.checked = false;
         }
-        elem.disabled = "disabled";
+        elem.disabled = true;
       });
   }
   console.log(document.cookie);
@@ -25,29 +29,31 @@ function getCookie(c_name) {
 function setCookie(name, value, age) {
     value = encodeURIComponent(name) + '=' + encodeURIComponent(value) + '; max-age=' + age;
     console.log(value);
-    // document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value) + ';max-age=' + age;
     document.cookie = value;
-}
+  }
 
 function deleteCookie(name) {
     setCookie(name, "", "-1");
 }
 
-area.oninput = () => {
-  setCookie('area', "Ваш город-"+""+area.value, 3600)
+city.oninput = () => {
+  setCookie('cityName', "Ваш город-"+""+city.value, 3600);
+  setCookie("cityChanged", "true", 3600)
 };
 
-document.getElementById('save').onclick = function () {
-  deleteCookie("area");
-  area.value = "";
+document.getElementById('clear').onclick = function () {
+  deleteCookie("cityName");
+  deleteCookie("cityChanged");
+  city.value = "";
+  city.disabled = false;
   console.log(document.cookie);
 }
 
 document.getElementById('saveChkbox').onclick = function () {
-      let checkArr = document.querySelectorAll(".check");
-      checkArr.forEach(function(elem){
-          setCookie(elem.id, elem.checked, 3600);
-      });
-      setCookie("saved", "true", 3600)
-      console.log(document.cookie);
+  let checkArr = document.querySelectorAll(".check");
+  checkArr.forEach(function(elem){
+      setCookie(elem.id, elem.checked, 3600);
+  });
+  setCookie("saved", "true", 3600)
+  console.log(document.cookie + " ИЛИ КУКИ НЕ ЗАПИСАЛИСЬ");
 }
